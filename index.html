@@ -194,7 +194,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-02-04 16:17:49 / 修改时间：16:30:53" itemprop="dateCreated datePublished" datetime="2024-02-04T16:17:49+08:00">2024-02-04</time>
+              <time title="创建时间：2024-02-04 16:17:49 / 修改时间：16:53:56" itemprop="dateCreated datePublished" datetime="2024-02-04T16:17:49+08:00">2024-02-04</time>
             </span>
 
           
@@ -208,23 +208,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <span id="more"></span>
-<p>##以下内容均来自chatgpt</p>
-<h1 id="深入理解词向量：SVD与语言模型"><a href="#深入理解词向量：SVD与语言模型" class="headerlink" title="深入理解词向量：SVD与语言模型"></a>深入理解词向量：SVD与语言模型</h1><p>在自然语言处理（NLP）领域，词向量是实现文本数据数值化的关键技术。它不仅帮助机器理解单词的含义，还能捕捉到词之间的复杂关系。本篇博客将重点介绍两种生成词向量的主要方法：奇异值分解（SVD）和基于神经网络的语言模型。</p>
-<h2 id="奇异值分解（SVD）与词向量"><a href="#奇异值分解（SVD）与词向量" class="headerlink" title="奇异值分解（SVD）与词向量"></a>奇异值分解（SVD）与词向量</h2><h3 id="什么是SVD？"><a href="#什么是SVD？" class="headerlink" title="什么是SVD？"></a>什么是SVD？</h3><p>奇异值分解是一种矩阵分解技术，它可以将任何一个矩阵分解为三个特定的矩阵乘积形式：一个正交矩阵、一个对角矩阵和另一个正交矩阵的转置。在NLP中，SVD常用于从词-文档矩阵或词-词共现矩阵中提取词向量。</p>
-<h3 id="SVD在词向量中的应用"><a href="#SVD在词向量中的应用" class="headerlink" title="SVD在词向量中的应用"></a>SVD在词向量中的应用</h3><p>使用SVD生成词向量的过程通常包括以下步骤：</p>
-<ol>
-<li><strong>构建共现矩阵</strong>：首先，基于大量文本数据构建一个词-词共现矩阵，矩阵中每个元素表示两个词共同出现在一定窗口大小的上下文中的次数。</li>
-<li><strong>应用SVD</strong>：然后，对这个共现矩阵应用SVD，得到三个矩阵（U、Σ、V^T）。词向量可以从U矩阵中提取，或者通过U矩阵和Σ矩阵的乘积获得。</li>
-<li><strong>降维</strong>：由于共现矩阵可能非常大，直接使用SVD分解得到的词向量维度可能也很高。因此，通常会选择前k个最大的奇异值对应的向量，以降低词向量的维度，同时保留最重要的语义信息。</li>
-</ol>
-<p>SVD方法的优点是理论基础坚实，能够有效地捕捉词汇间的语义关系。但其缺点也很明显，包括计算成本高，尤其是在处理大规模词汇表时，以及对高频词汇过于敏感。</p>
-<h2 id="基于神经网络的语言模型"><a href="#基于神经网络的语言模型" class="headerlink" title="基于神经网络的语言模型"></a>基于神经网络的语言模型</h2><p>近年来，随着深度学习技术的发展，基于神经网络的语言模型已成为生成词向量的主流方法。这些模型通常通过预测词汇的上下文或相反来学习词向量，其中最著名的模型包括Word2Vec、GloVe和FastText。</p>
-<h3 id="Word2Vec"><a href="#Word2Vec" class="headerlink" title="Word2Vec"></a>Word2Vec</h3><p>Word2Vec是一种高效的词向量计算模型，它包括两种架构：连续词袋（CBOW）和Skip-Gram。CBOW通过上下文预测目标词，而Skip-Gram则反过来，通过目标词预测上下文。Word2Vec的优势在于它能够捕捉到细微的语义差别，并且训练速度快。</p>
-<h3 id="GloVe"><a href="#GloVe" class="headerlink" title="GloVe"></a>GloVe</h3><p>全局向量（GloVe）模型结合了共现矩阵和直接预测方法的优点。它首先构建一个全局词-词共现矩阵，然后通过最小化共现概率的对数值和词向量内积之间的差异来训练词向量。GloVe模型特别擅长捕捉全局语义信息。</p>
-<h3 id="FastText"><a href="#FastText" class="headerlink" title="FastText"></a>FastText</h3><p>FastText模型扩展了Word2Vec的思想，通过将单词表示为子词（n-gram）的集合来训练词向量。这使得FastText能够有效处理罕见词和拼写错误的词汇。FastText特别适合于需要细粒度语义信息的任务。</p>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>词向量作为自然语言处理中的一项基础技术，无论是传统的SVD方法还是基于神经网络的语言模型，都在不断地推动着该领域的发展。虽然每种方法都有其优缺点，但它们为我们提供了强大的工具，帮助我们更好地理解和处理人类语言。</p>
-
+          <p>深入理解词向量：SVD与语言模型</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/02/04/%E8%AF%8D%E5%90%91%E9%87%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -274,7 +266,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-04 16:30:45" itemprop="dateModified" datetime="2024-02-04T16:30:45+08:00">2024-02-04</time>
+                <time title="修改时间：2024-02-04 16:53:42" itemprop="dateModified" datetime="2024-02-04T16:53:42+08:00">2024-02-04</time>
               </span>
 
           
@@ -288,23 +280,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <span id="more"></span>
-<h2 id="使用Hexo和Github搭建个人博客"><a href="#使用Hexo和Github搭建个人博客" class="headerlink" title="使用Hexo和Github搭建个人博客"></a>使用Hexo和Github搭建个人博客</h2><h3 id="1-首先注册github"><a href="#1-首先注册github" class="headerlink" title="1.首先注册github"></a>1.首先注册github</h3><p>1.1首先进入<a target="_blank" rel="noopener" href="https://github.com/"><strong>Github</strong></a></p>
-<p><img src="/2024/01/29/GitHub%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7/image-20240129124345497.png"></p>
-<p>1.2如果出现以上的问题，建议使用科学上网工具，然后就能进来啦！</p>
-<p><img src="/2024/01/29/GitHub%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7/image-20240129124623258.png" alt="image-20240129124623258">1.3点击右上角的<strong>Sign up</strong>即可进入注册页面，首先输入邮箱，然后输入自己设置的密码，最后是用户名。密码这里确保至少有<strong>15个字符</strong>或<strong>至少</strong>包括<strong>数字和小写字母的8个字符</strong></p>
-<p><img src="/2024/01/29/GitHub%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7/image-20240129125606609.png" alt="image-20240129125606609"></p>
-<p>1.4连续两次继续（<strong>continue</strong>）之后点击<strong>creat accout</strong></p>
-<p><img src="/2024/01/29/GitHub%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7/image-20240129125756079.png" alt="image-20240129125756079"></p>
-<p>1.5之后输入邮箱中收到的验证码</p>
-<p><img src="/2024/01/29/GitHub%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7/image-20240129152731020.png" alt="image-20240129152731020"></p>
-<p>1.6然后会让你选择关于仓库的一些选项，根据需要选择</p>
-<p><img src="/2024/01/29/GitHub%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7/image-20240129153014378.png" alt="image-20240129153014378"></p>
-<p><img src="/2024/01/29/GitHub%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7/image-20240129153130300.png" alt="image-20240129153130300"></p>
-<p>1.7GitHub 的仓库分为两种，一种是public repositories公开免费版，一种是private repositories私有付费版。其中，免费版是完全公开的，而私有版一般是由企业或者不愿公开仓库的个人用户购买之后选项我们选择<strong>Continue for free</strong></p>
-<p><img src="/2024/01/29/GitHub%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7/image-20240129153257335.png" alt="image-20240129153257335"></p>
-<p>1.8恭喜，到这一步，恭喜你成功注册了GitHub！</p>
-
+          <p>GitHub注册账号</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/01/29/GitHub%E6%B3%A8%E5%86%8C%E8%B4%A6%E5%8F%B7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
